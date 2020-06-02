@@ -22,27 +22,25 @@ The libaries needed to run the code, using Python version 3.* are:
 
 ## Project Motivation<a name="motivation"></a>
 
-Using Boston Airbnb Open Data from Sept 2016 to Sept 2017, the goal of this project is to answer three business questions: 
+As part of my journey in the field of Data Science, I chose [Blue Book for Bulldozers](https://www.kaggle.com/c/bluebook-for-bulldozers/overview/description) for prediction using Machine Learning.
 
-1. What is the cost variation for homestays in Boston?
-2. How neighborhood and review scores rating relate with each other?
-3. What are the rules, facilities and room type most offered?
+The goal of this project is to predict the sale price of a particular piece of heavy equiment at auction based on it's usage, equipment type, and configuaration.  The data is sourced from auction result postings and includes information on usage and equipment configurations.
 
-The files related to this case, can be found in [Boston Airbnb Open Data in Kaggle](https://www.kaggle.com/airbnb/boston) which include: 
+The data for this competition is split into three parts, and can be found [here](https://www.kaggle.com/c/bluebook-for-bulldozers/data):
 
-* Listings, including full descriptions and average review score
-* Reviews, including unique id for each reviewer and detailed comments
-* Calendar, including listing id and the price and availability for that day
+Train.csv is the training set, which contains data through the end of 2011.
+Valid.csv is the validation set, which contains data from January 1, 2012 - April 30, 2012 You make predictions on this set throughout the majority of the competition. Your score on this set is used to create the public leaderboard.
+Test.csv is the test set, which won't be released until the last week of the competition. It contains data from May 1, 2012 - November 2012. Your score on the test set determines your final rank for the competition.
 
 ## File Descriptions <a name="files"></a>
 
-There is one notebook that was developed to answer the three questions using basic Exploratory Data Analysis. Calendar and Listings were the csv files condidered in this case. Moreover, Markdown cells were used to explain the steps considered to each business question.
+There is one notebook that was developed to predict the sale price using Random Forest and Hyperparameter tuning with RandomizedSearchCV. Besides, Markdown cells were used to explain the steps considered not only for prediction but also for EDA.
 
 ## Results<a name="results"></a>
 
-The main findings of the code can be found at the post available [here](https://medium.com/@klever.mera/thinking-to-travel-to-boston-after-the-lockdown-f84a99ec728e).
+First, an EDA was done in order to get familiar with the datasets. Next, some process such as cleaning and feature engineering were needed to handle missing values (categorical and numerical). For modeling, Random Forests was considered to predict the price and also to improve the scores Hyperparameter tuning was also needed. Finally, the RMSLE (root mean squared log error) was determined as a score based on the evaluation requested in Kaggle, and a csv file which contains two columns: `SalesID` and `SalePrice` (test_predictions.csv) was generated and included in this repo.
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-Must give credit to Boston Airbnb Open Data in Kaggle for the data.  You can find the Licensing for the data and other descriptive information at the Kaggle link available [here](https://www.kaggle.com/airbnb/boston).  Otherwise, feel free to use the code here as you would like! 
+Must give credit to Blue Book for Bulldozers in Kaggle for the data.  You can find the Licensing for the data and other descriptive information at the Kaggle link available [here](https://www.kaggle.com/c/bluebook-for-bulldozers/overview/description). Otherwise, feel free to use the code here as you would like! 
 
